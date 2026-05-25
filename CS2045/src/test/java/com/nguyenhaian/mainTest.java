@@ -13,13 +13,8 @@ import org.junit.Test;
  */
 public class mainTest 
 {
-    /**
-     * Test Case 1: 17 - 43M - 564 - F
-     */
-    @Test
-    public void testCase1()
-    {
-        String input = "17\n43000000\n564\nF";
+
+    private static String getSystemOutput(String input) {
         InputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn((in));
 
@@ -29,7 +24,17 @@ public class mainTest
         main.main(new String[]{});
         
         String consoleOutput = out.toString().trim();
-        assertEquals("Invalid Input", consoleOutput);
+        return consoleOutput;
+    }
+
+    /**
+     * Test Case 1: 17 - 43M - 564 - F
+     */
+    @Test
+    public void testCase1()
+    {
+        String input = "17\n43000000\n564\nF";
+        assertEquals("Invalid Input", getSystemOutput(input));
     }
 
      /**
@@ -39,16 +44,7 @@ public class mainTest
     public void testCase2()
     {
         String input = "66\n432000000\n333\nF";
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn((in));
-
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
-
-        main.main(new String[]{});
-        
-        String consoleOutput = out.toString().trim();
-        assertEquals("Invalid Input", consoleOutput);
+        assertEquals("Invalid Input", getSystemOutput(input));
     }
 
      /**
@@ -58,16 +54,7 @@ public class mainTest
     public void testCase3()
     {
         String input = "23\n4900000\n758\nC";
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn((in));
-
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
-
-        main.main(new String[]{});
-        
-        String consoleOutput = out.toString().trim();
-        assertEquals("Invalid Input", consoleOutput);
+        assertEquals("Invalid Input", getSystemOutput(input));
     }
 
     /**
@@ -76,16 +63,7 @@ public class mainTest
     @Test
     public void testCase4() {
         String input = "34\n500100000\n435\nF\n";
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
-
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
-
-        main.main(new String[]{});
-
-        String consoleOutput = out.toString().trim();
-        assertEquals("Invalid Input", consoleOutput);
+        assertEquals("Invalid Input", getSystemOutput(input));
     }
 
     /**
@@ -94,16 +72,7 @@ public class mainTest
     @Test
     public void testCase5() {
         String input = "45\n234000000\n299\nC\n";
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
-
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
-
-        main.main(new String[]{});
-
-        String consoleOutput = out.toString().trim();
-        assertEquals("Invalid Input", consoleOutput);
+        assertEquals("Invalid Input", getSystemOutput(input));
     }
 
     /**
@@ -112,16 +81,7 @@ public class mainTest
     @Test
     public void testCase6() {
         String input = "56\n129000000\n851\nC\n";
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
-
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
-
-        main.main(new String[]{});
-
-        String consoleOutput = out.toString().trim();
-        assertEquals("Invalid Input", consoleOutput);
+        assertEquals("Invalid Input", getSystemOutput(input));
     }
 
     /**
@@ -130,16 +90,7 @@ public class mainTest
     @Test
     public void testCase7() {
         String input = "23\n65000000\n432\nA\n";
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
-
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
-
-        main.main(new String[]{});
-
-        String consoleOutput = out.toString().trim();
-        assertEquals("Invalid Input", consoleOutput);
+        assertEquals("Invalid Input", getSystemOutput(input));
     }
 
     /**
@@ -148,16 +99,7 @@ public class mainTest
     @Test
     public void testCase8() {
         String input = "65\n20000000\n300\nC\n";
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
-
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
-
-        main.main(new String[]{});
-
-        String consoleOutput = out.toString().trim();
-        assertEquals("Reject", consoleOutput);
+        assertEquals("Reject", getSystemOutput(input));
     }
 
     /**
@@ -166,16 +108,7 @@ public class mainTest
     @Test
     public void testCase9() {
         String input = "34\n5000000\n550\nF\n";
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
-
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
-
-        main.main(new String[]{});
-
-        String consoleOutput = out.toString().trim();
-        assertEquals("Reject", consoleOutput);
+        assertEquals("Reject", getSystemOutput(input));
     }
 
     /**
@@ -184,16 +117,7 @@ public class mainTest
     @Test
     public void testCase10() {
         String input = "18\n14000000\n750\nF\n";
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
-
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
-
-        main.main(new String[]{});
-
-        String consoleOutput = out.toString().trim();
-        assertEquals("Reject", consoleOutput);
+        assertEquals("Reject", getSystemOutput(input));
     }
 
     /**
@@ -202,16 +126,7 @@ public class mainTest
     @Test
     public void testCase11() {
         String input = "54\n7000000\n850\nC\n";
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
-
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
-
-        main.main(new String[]{});
-
-        String consoleOutput = out.toString().trim();
-        assertEquals("Manual Review", consoleOutput);
+        assertEquals("Manual Review", getSystemOutput(input));
     }
 
     /**
@@ -220,16 +135,7 @@ public class mainTest
     @Test
     public void testCase12() {
         String input = "26\n500000000\n725\nF\n";
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
-
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
-
-        main.main(new String[]{});
-
-        String consoleOutput = out.toString().trim();
-        assertEquals("Manual Review", consoleOutput);
+        assertEquals("Manual Review", getSystemOutput(input));
     }
 
     /**
@@ -238,16 +144,7 @@ public class mainTest
     @Test
     public void testCase13() {
         String input = "62\n45000000\n666\nF\n";
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
-
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
-
-        main.main(new String[]{});
-
-        String consoleOutput = out.toString().trim();
-        assertEquals("Manual Review", consoleOutput);
+        assertEquals("Manual Review", getSystemOutput(input));
     }
 
     /**
@@ -256,16 +153,7 @@ public class mainTest
     @Test
     public void testCase14() {
         String input = "23\n234000000\n555\nC\n";
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
-
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
-
-        main.main(new String[]{});
-
-        String consoleOutput = out.toString().trim();
-        assertEquals("Approve", consoleOutput);
+        assertEquals("Approve", getSystemOutput(input));
     }
 
     /**
@@ -274,16 +162,7 @@ public class mainTest
     @Test
     public void testCase15() {
         String input = "44\n324000000\n777\nC\n";
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
-
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
-
-        main.main(new String[]{});
-
-        String consoleOutput = out.toString().trim();
-        assertEquals("Approve", consoleOutput);
+        assertEquals("Approve", getSystemOutput(input));
     }
 
 }
